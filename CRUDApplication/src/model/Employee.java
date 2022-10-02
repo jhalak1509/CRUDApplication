@@ -13,7 +13,7 @@ public class Employee {
     private String employeeName;
     private int employeeId;
     private int age;
-    private char gender;
+    private String gender;
     private String startDate;
     private String level;
     private String team;
@@ -45,11 +45,11 @@ public class Employee {
         this.age = age;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

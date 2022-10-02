@@ -4,6 +4,8 @@
  */
 package ui;
 
+import model.EmployeeDirectory;
+
 /**
  *
  * @author jhalaksurve
@@ -13,8 +15,13 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    
+    EmployeeDirectory directory;
+    
     public MainJFrame() {
         initComponents();
+        
+        directory = new EmployeeDirectory();
     }
 
     /**
@@ -100,6 +107,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnAddEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmployeeActionPerformed
         // TODO add your handling code here:
+        
+        CreateJPanel createPanel = new CreateJPanel(directory);
+        splitPane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnAddEmployeeActionPerformed
 
     private void btnViewEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEmployeeActionPerformed
