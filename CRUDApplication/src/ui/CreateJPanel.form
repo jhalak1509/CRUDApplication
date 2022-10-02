@@ -18,46 +18,42 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="labelTitle" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="labelTitle" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="110" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelName" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelGender" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelStartDate" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelLevel" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelEmployeeID" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelAge" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelPosition" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelTeam" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelCellNumber" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="labelEmail" min="-2" pref="96" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtTeam" max="32767" attributes="0"/>
-                          <Component id="txtName" max="32767" attributes="0"/>
-                          <Component id="txtEmployeeID" max="32767" attributes="0"/>
-                          <Component id="txtAge" max="32767" attributes="0"/>
-                          <Component id="txtStartDate" max="32767" attributes="0"/>
-                          <Component id="txtLevel" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtPosition" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCellNumber" max="32767" attributes="0"/>
-                          <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cbGender" pref="246" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="labelEmployeeID" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelName" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAge" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelGender" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelStartDate" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelLevel" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelTeam" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelPosition" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelCellNumber" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="labelEmail" min="-2" pref="96" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="308" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtEmployeeID" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtName" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtAge" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="cbGender" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtStartDate" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtLevel" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtTeam" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtPosition" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtCellNumber" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+                  <Component id="txtEmail" alignment="1" min="-2" pref="246" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="441" max="-2" attributes="0"/>
               <Component id="btnSave" min="-2" pref="87" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,7 +69,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelEmployeeID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelEmployeeID" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="txtEmployeeID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -82,11 +78,11 @@
                   <Component id="txtAge" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelGender" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbGender" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelGender" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbGender" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtStartDate" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -107,18 +103,18 @@
                   <Component id="txtPosition" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelCellNumber" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtCellNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelCellNumber" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCellNumber" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace pref="128" max="32767" attributes="0"/>
               <Component id="btnSave" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -224,6 +220,7 @@
             <BevelBorder/>
           </Border>
         </Property>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>

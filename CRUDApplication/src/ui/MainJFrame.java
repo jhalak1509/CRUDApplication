@@ -73,7 +73,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnAddEmployee)
                 .addGap(37, 37, 37)
                 .addComponent(btnViewEmployee)
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addContainerGap(800, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -82,11 +82,11 @@ public class MainJFrame extends javax.swing.JFrame {
         workPanel.setLayout(workPanelLayout);
         workPanelLayout.setHorizontalGroup(
             workPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 695, Short.MAX_VALUE)
+            .addGap(0, 856, Short.MAX_VALUE)
         );
         workPanelLayout.setVerticalGroup(
             workPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workPanel);
@@ -114,6 +114,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnViewEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEmployeeActionPerformed
         // TODO add your handling code here:
+        ViewJPanel viewPanel = new ViewJPanel(directory);
+        splitPane.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewEmployeeActionPerformed
 
     /**
