@@ -7,6 +7,7 @@ package ui;
 import javax.swing.JOptionPane;
 import model.Employee;
 import model.EmployeeDirectory;
+import java.util.regex.*;  
 
 /**
  *
@@ -19,11 +20,34 @@ public class CreateJPanel extends javax.swing.JPanel {
      */
     EmployeeDirectory directory;
     
+    
     public CreateJPanel(EmployeeDirectory directory) {
         initComponents();
         this.directory = directory;
     }
-
+  
+    static boolean isValid(String email) {
+      String regex = "^(.+)@(.+)$";
+     
+      return email.matches(regex);
+   }
+    
+    static boolean isPhoneNumber(String phoneNumber){
+        Pattern ptrn = Pattern.compile("(0/91)?[7-9][0-9]{9}");
+        Matcher match = ptrn.matcher(phoneNumber);   
+   
+   
+        return (match.find() && match.group().equals(phoneNumber));   
+    }
+    
+    public  boolean isValidDate(String date)
+    {
+        String regex = "^(1[0-2]|0[1-9])/(3[01]"
+                       + "|[12][0-9]|0[1-9])/[0-9]{4}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher((CharSequence)date);
+        return matcher.matches();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -164,7 +188,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(labelName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelEmployeeID)
                     .addComponent(txtEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -224,6 +248,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         
+        
         String employeeName = txtName.getText();
         int employeeId = Integer.parseInt(txtEmployeeID.getText());
         int age = Integer.parseInt(txtAge.getText());
@@ -234,6 +259,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         String position = txtPosition.getText();
         long cellNumber = Long.parseLong(txtCellNumber.getText());
         String email = txtEmail.getText();
+        
+        if(isValidDate(startDate)){
+        
+        if(isValid(email)&& isPhoneNumber(String.valueOf(cellNumber))){   
+    
         
         Employee e = directory.addNewEmployee();
         
@@ -259,8 +289,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtPosition.setText("");
         txtCellNumber.setText("");
         txtEmail.setText("");
-        
-        
+    
+         }
+         else JOptionPane.showMessageDialog(this, "Invalid Email or cell phone number");
+        }
+        else JOptionPane.showMessageDialog(this, "Invalid date");
     }//GEN-LAST:event_btnSaveActionPerformed
 
 
