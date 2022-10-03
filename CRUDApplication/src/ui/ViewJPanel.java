@@ -190,6 +190,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -202,7 +207,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -315,7 +320,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         
         if (selectedRowIndex < 0){
         
-            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+            JOptionPane.showMessageDialog(this, "Please select a row to view.");
             return;
         }
         
@@ -396,7 +401,59 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void tblEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEmployeeMouseClicked
         // TODO add your handling code here:
+        
+        int selectedRowIndex = tblEmployee.getSelectedRow();
+        if (selectedRowIndex<0){
+        JOptionPane.showMessageDialog(this, "Select the row you want to DELETE");
+        return;
+        }
+        DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
+        Employee selectedEmployee;  
+         selectedEmployee= (Employee) model.getValueAt(selectedRowIndex, 0);
+         txtName.setText(selectedEmployee.getEmployeeName());
+         txtEmployeeID.setText(String.valueOf(selectedEmployee.getEmployeeId()));
+         txtAge.setText(String.valueOf(selectedEmployee.getAge()));
+         txtGender.setText(String.valueOf(selectedEmployee.getGender()));
+         txtStartDate.setText(String.valueOf(selectedEmployee.getStartDate()));
+         txtLevel.setText(String.valueOf(selectedEmployee.getLevel()));
+         txtTeam.setText(String.valueOf(selectedEmployee.getTeam()));
+         txtPosition.setText(String.valueOf(selectedEmployee.getPosition()));
+         txtCellNumber.setText(String.valueOf(selectedEmployee.getCellNumber()));
+         txtEmail.setText(String.valueOf(selectedEmployee.getEmail()));
+//         populateTable();
     }//GEN-LAST:event_tblEmployeeMouseClicked
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel tm;
+        tm = (DefaultTableModel)tblEmployee.getModel();
+        if(tblEmployee.getSelectedRowCount()==1){
+           
+     String name= txtName.getText();
+     String id = txtEmployeeID.getText();
+     int age = Integer.parseInt(txtAge.getText());
+     String gender = txtGender.getText();
+     String level = txtLevel.getText();
+     String teamInfo = txtTeam.getText();
+     String positionTitle = txtPosition.getText();
+     String phoneNumber = txtCellNumber.getText();
+     String emailId = txtEmail.getText();
+     String date= txtStartDate.getText();
+     
+     
+     tm.setValueAt(name, tblEmployee.getSelectedRow(),0);
+     tm.setValueAt(id, tblEmployee.getSelectedRow(),1);
+     tm.setValueAt(age, tblEmployee.getSelectedRow(),2);
+     tm.setValueAt(gender, tblEmployee.getSelectedRow(),3);
+     tm.setValueAt(level, tblEmployee.getSelectedRow(),4);
+     tm.setValueAt(teamInfo, tblEmployee.getSelectedRow(),5);
+     tm.setValueAt(positionTitle, tblEmployee.getSelectedRow(),6);
+     tm.setValueAt(phoneNumber, tblEmployee.getSelectedRow(),7);
+     tm.setValueAt(emailId, tblEmployee.getSelectedRow(),8);
+     tm.setValueAt(date, tblEmployee.getSelectedRow(),9);
+     //populateTable();
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
