@@ -6,8 +6,10 @@ package ui;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import model.Employee;
 import model.EmployeeDirectory;
+import model.MyRowFilter;
 
 /**
  *
@@ -64,6 +66,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         txtEmail = new javax.swing.JTextField();
         txtPosition = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
+        txtSearch = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
 
         labelTitle.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         labelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -196,6 +200,19 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchActionPerformed(evt);
+            }
+        });
+
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -257,13 +274,23 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(231, 231, 231))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSearch)
+                .addGap(18, 18, 18)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(labelTitle)
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch))
+                .addGap(4, 4, 4)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -455,9 +482,24 @@ public class ViewJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        
+        DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
+        TableRowSorter mySorter = new TableRowSorter(model);
+        tblEmployee.setRowSorter(mySorter);
+        String searchText = txtSearch.getText();
+        mySorter.setRowFilter(new MyRowFilter(searchText));
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
@@ -481,6 +523,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtLevel;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPosition;
+    private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtStartDate;
     private javax.swing.JTextField txtTeam;
     // End of variables declaration//GEN-END:variables
